@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Productos</h1>
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Min Stock</th>
+        <th>Acciones</th>
+    </tr>
+    {% for producto in productos %}
+    <tr>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>{{ producto.cantidad }}</td>
+        <td>{{ producto.min_stock }}</td>
+        <td>
+            <a href="{{ url_for('editar_producto', id=producto.id) }}" class="btn btn-edit">Editar</a>
+            <form action="{{ url_for('eliminar_producto', id=producto.id) }}" method="POST" style="display:inline;">
+                <button type="submit" class="btn btn-delete">Eliminar</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
