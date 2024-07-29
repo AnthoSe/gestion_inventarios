@@ -7,7 +7,14 @@ from io import BytesIO
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    total_productos = Producto.query.count()
+    productos_en_stock = Producto.query.filter(Producto.cantidad > 0).count()
+    productos_bajo_stock = Producto.query.filter(Producto.cantidad <= Producto.min_stock).count()
+    return render_template('index.html', 
+                           total_productos=total_productos, 
+                           productos_en_stock=productos_en_stock, 
+                           productos_bajo_stock=productos_bajo_stock)
+
 
 @app.route('/productos')
 def productos():

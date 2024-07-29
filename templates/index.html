@@ -1,4 +1,40 @@
 {% extends "base.html" %}
+
 {% block content %}
 <h1>Bienvenido a la Gestión de Inventarios</h1>
+<div class="dashboard">
+    <div class="info-box">
+        <h2>Resumen de Inventarios</h2>
+        <div class="card-container row">
+            <div class="card col-md-4">
+                <h3>Total de Productos</h3>
+                <p>{{ total_productos }}</p>
+            </div>
+            <div class="card col-md-4">
+                <h3>Productos en Stock</h3>
+                <p>{{ productos_en_stock }}</p>
+            </div>
+            <div class="card col-md-4">
+                <h3>Productos con Bajo Stock</h3>
+                <p>{{ productos_bajo_stock }}</p>
+            </div>
+        </div>
+        <canvas id="inventoryChart" width="400" height="200"></canvas>
+    </div>
+    <div class="quick-links">
+        <h2>Acciones Frecuentes</h2>
+        <div class="btn-group" role="group">
+            <a href="{{ url_for('productos') }}" class="btn btn-primary">Ver Todos los Productos</a>
+            <a href="{{ url_for('nuevo_producto') }}" class="btn btn-success">Añadir Nuevo Producto</a>
+            <a href="{{ url_for('reportes') }}" class="btn btn-info">Generar Reporte</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    var totalProductos = {{ total_productos }};
+    var productosEnStock = {{ productos_en_stock }};
+    var productosBajoStock = {{ productos_bajo_stock }};
+</script>
+<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
 {% endblock %}

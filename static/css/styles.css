@@ -60,42 +60,118 @@ table th {
     color: #2c3e50;
 }
 
+.dashboard {
+    margin-top: 20px;
+}
+
+.info-box, .quick-links {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.info-box h2, .quick-links h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.card p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
 .btn {
     display: inline-block;
     padding: 10px 20px;
     margin: 10px 0;
-    color: white;
+    color: #ffffff; /* Color de texto blanco */
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
 .btn:hover {
     background-color: #2980b9;
+    color: #ffffff; /* Color de texto blanco en hover */
 }
 
 .btn-create {
     background-color: #1abc9c;
+    color: #ffffff; /* Color de texto blanco */
 }
 
 .btn-create:hover {
     background-color: #16a085;
+    color: #ffffff; /* Color de texto blanco en hover */
 }
 
 .btn-edit {
     background-color: #f39c12;
+    color: #ffffff; /* Color de texto blanco */
 }
 
 .btn-edit:hover {
     background-color: #e67e22;
+    color: #ffffff; /* Color de texto blanco en hover */
 }
 
 .btn-delete {
     background-color: #e74c3c;
+    color: #ffffff; /* Color de texto blanco */
 }
 
 .btn-delete:hover {
     background-color: #c0392b;
+    color: #ffffff; /* Color de texto blanco en hover */
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    flex: 1;
+    padding: 20px;
 }
 
 footer {
@@ -103,8 +179,5 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
